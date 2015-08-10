@@ -1,0 +1,1 @@
+.global _start_start:MOV R0, #1 @set stdoutLDR R1, =nums @ addr of string to R0MOV R3, #0loop:LDR R2,[R1,R3]SWI 0x6b	@ swi 0x6b is armsim svi for print int to consoleADD R3,R3,#4CMP R3,#16 	@ 0 plus 4*4bytes for 5 entries in arrayBNE loopnums:.word 5,2,7,1,8
